@@ -1,14 +1,83 @@
-html {
-    background-color: yellow;
-    font-size: 20px;
-  }
-  
-  ul {
-    background: red;
-    padding: 10px;
-    border: 1px solid black;
-  }
-  
-  li {
-    margin-left: 20px;
-  }
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #c58ef9, #a4c8ff);
+  font-family: Arial, sans-serif;
+}
+.main-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+.side-blocks {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+.side-block {
+  width: 150px;
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+.container {
+  width: 800px;
+  height: 1000px;
+  padding: 40px;
+  padding-left: 100px;
+  padding-right: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+h2 {
+  color: white;
+  margin-bottom: 10px;
+}
+hr {
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 20px 0;
+}
+.task {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.task-list {
+  flex-grow: 1; /* Заполняет свободное пространство */
+  display: flex;
+  flex-direction: column;
+}
+
+.task input {
+  margin-right: 10px;
+}
+.add-task {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.add-task:hover {
+  opacity: 1;
+}
