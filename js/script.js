@@ -17,6 +17,9 @@ document.querySelector(".add-task input").addEventListener("keydown", function(e
             newTask.innerHTML = `
                 <input type="checkbox">
                 <input type="text" value="${taskText}">
+                <button class="delete-btn">
+                    <i class="fas fa-trash"></i>
+                </button>
             `;
             
             // Добавляем новую задачу в конец списка
@@ -31,6 +34,7 @@ document.querySelector(".add-task input").addEventListener("keydown", function(e
         }
     }
 });
+
 
 // Функция для переключения состояния задачи
 function toggleTask(event) {
@@ -52,6 +56,14 @@ function toggleTask(event) {
         }
     }
 }
+
+// Функция для удаления задачи
+document.querySelector(".task-list").addEventListener("click", function(event) {
+    if (event.target.classList.contains("delete-btn") || event.target.closest(".delete-btn")) {
+        const taskElement = event.target.closest(".task");
+        taskElement.remove(); // Удаляем задачу из DOM
+    }
+});
 
 // Очищаем текст при клике в поле
 inputField.addEventListener("focus", function(event) {

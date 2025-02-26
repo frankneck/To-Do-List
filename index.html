@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
     <head>
         <title>ToDoList</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="shortcut icon" href="C:\Users\finnf\Downloads\icons8-tick-64.png" type="image/x-icon"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
     <body>
         <div class="main-wrapper">
@@ -18,7 +19,11 @@
                     <div class="task" onclick="toggleTask(event)">
                         <input type="checkbox">
                         <input type="text" value="Новая задача">
-                    </div>
+                        <button class="delete-btn">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>  
+
                 </div>
                 <hr>
                 <div class="add-task">

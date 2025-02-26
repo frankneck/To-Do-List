@@ -44,11 +44,38 @@ body {
   color: white;
 }
 
+/* время */
 .side-block {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   backdrop-filter: blur(10px);
   color: rgba(255, 255, 255, 0.7);
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ввод */
+.side-block input[type="time"] {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  outline: none;
+  appearance: none;
+}
+
+.side-block input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
 }
 
 h2 {
@@ -69,6 +96,25 @@ hr {
   padding: 10px;
   border-radius: 10px;
   color: rgba(255, 255, 255, 0.7);
+}
+
+.delete-btn {
+  background: transparent; /* Убираем заливку */
+  border: none; /* Убираем границу */
+  cursor: pointer; /* Указатель курсора при наведении */
+  padding: 8px; /* Немного отступов, если нужно */
+  transition: transform 0.3s ease; /* Плавные переходы при наведении */
+}
+
+.delete-btn i {
+  color: rgba(255, 0, 0, 0.2); /* Цвет иконки */
+  font-size: 18px; /* Размер иконки */
+  transition: color 0.3s ease;
+}
+
+.delete-btn i:hover {
+  color: rgba(255, 0, 0, 1); /* Цвет иконки */
+  font-size: 18px; /* Размер иконки */
 }
 
 /* чекбокс кастом */
@@ -92,7 +138,7 @@ hr {
 .task input[type="checkbox"]::after {
   content: "✔";
   font-size: 14px;
-  color: black; /* Цвет галочки */
+  color: rgb(98, 98, 98); /* Цвет галочки */
   position: absolute;
   top: 50%;
   left: 50%;
