@@ -1,21 +1,18 @@
-// const list = document.createElement('ul');
-// const info = document.createElement('p');
-// const html = document.querySelector('html');
+function toggleTask(event) {
+    const taskElement = event.currentTarget;
+    const checkbox = taskElement.querySelector("input[type='checkbox']");
+    const textInput = taskElement.querySelector("input[type='text']");
 
-// info.textContent = 'Below is a dynamic list. Click anywhere on the page to add a new list item. Click an existing list item to change its text to something else.';
+    // Проверяем, был ли клик по чекбоксу
+    if (event.target === checkbox) {
+        checkbox.checked = !checkbox.checked;
+        taskElement.classList.toggle("completed"); // Добавляем/удаляем класс completed
+    }
 
-// document.body.appendChild(info);
-// document.body.appendChild(list);
-
-// html.onclick = function() {
-//   const listItem = document.createElement('li');
-//   const listContent = prompt('What content do you want the list item to have?');
-//   listItem.textContent = listContent;
-//   list.appendChild(listItem);
-
-//   listItem.onclick = function(e) {
-//     e.stopPropagation();
-//     const listContent = prompt('Enter new content for your list item');
-//     this.textContent = listContent;
-//   }
-// }
+    // Если задача выполнена, делаем поле для ввода неактивным
+    if (checkbox.checked) {
+        textInput.disabled = true;  // Делаем поле недоступным для редактирования
+    } else {
+        textInput.disabled = false;  // Разблокируем поле для редактирования
+    }
+}

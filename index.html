@@ -8,16 +8,25 @@
     <body>
         <div class="main-wrapper">
             <div class="side-blocks">
-                <div class="side-block">Начало работы</div>
-                <div class="side-block">Конец работы</div>
+                <div class="side-block">Начало работы<input type="time"></div>
+                <div class="side-block">Конец работы<input type="time"></div>
             </div>
             <div class="container">
                 <h2>Ваши задачи</h2>
                 <hr>
                 <div class="task-list">
-                    <div class="task"><input type="checkbox"> Покушать</div>
-                    <div class="task"><input type="checkbox"> Покушать</div>
-                    <div class="task"><input type="checkbox"> Покушать</div>
+                    <div class="task" onclick="toggleTask(event)">
+                        <input type="checkbox">
+                        <input type="text" value="Новая задача">
+                    </div>
+                    <div class="task" onclick="toggleTask(event)">
+                        <input type="checkbox">
+                        <input type="text" value="Новая задача">
+                    </div>
+                    <div class="task" onclick="toggleTask(event)">
+                        <input type="checkbox">
+                        <input type="text" value="Новая задача">
+                    </div>
                 </div>
                 <hr>
                 <div class="add-task">+ Добавить задачу</div>

@@ -70,6 +70,19 @@ hr {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.task input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.task input[type="text"] {
+  background: transparent;
+  border: none;
+  color: white;
+  flex-grow: 1;
+  font-size: 16px;
+  outline: none;
+}
+
 .task-list {
   flex-grow: 1; /* Заполняет свободное пространство */
   display: flex;
@@ -79,6 +92,12 @@ hr {
 .task input {
   margin-right: 10px;
 }
+
+.task.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
 .add-task {
   display: flex;
   align-items: center;
