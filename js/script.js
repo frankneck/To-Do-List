@@ -38,6 +38,8 @@
                 // Очищаем поле ввода
                 event.target.value = "+ Добавить задачу";
                 event.target.style.color = "rgba(181, 181, 181, 1)"; // Ставим серый цвет
+
+                event.target.blur(); // Убираем фокус с поля ввода
             }
         }
     });
@@ -68,8 +70,6 @@
         });
         localStorage.setItem("tasks", JSON.stringify(tasks)); // Сохраняем в localStorage
     }
-
-
 
     // Функция для загрузки задач из localStorage
     function loadTasksFromLocalStorage() {
@@ -209,7 +209,7 @@
     document.querySelector(".task-list").addEventListener("blur", function(event) {
         if (event.target && event.target.matches(".task input[type='text']")) {
             const taskElement = event.target.closest(".task"); // Находим родительский элемент (задачу)
-
+    
             // Проверяем, если текстовое поле пустое
             if (event.target.value.trim() === "") {
                 taskElement.remove(); // Удаляем задачу из DOM
