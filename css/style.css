@@ -71,12 +71,48 @@ hr {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* чекбокс кастом */
 .task input[type="checkbox"] {
-  margin-right: 10px;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white; /* Цвет рамки */
+  border-radius: 5px; /* Закругление */
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* наводка */
+.task input[type="checkbox"]:hover {
+  border-color: #f1f1f1;
+}
+
+.task input[type="checkbox"]::after {
+  content: "✔";
+  font-size: 14px;
+  color: black; /* Цвет галочки */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+/* добавление галочки если да */
+.task input[type="checkbox"]:checked::after { 
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.task input[type="checkbox"]:checked {
+  background: white;
+  border-color: white;
 }
 
 .task input[type="text"] {
   background: transparent;
+  appearance: none;
   border: none;
   color: white;
   flex-grow: 1;

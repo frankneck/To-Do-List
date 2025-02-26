@@ -34,13 +34,22 @@ document.querySelector(".add-task input").addEventListener("keydown", function(e
 
 // Функция для переключения состояния задачи
 function toggleTask(event) {
-    const taskElement = event.currentTarget; // это сама задача
+    const taskElement = event.currentTarget;
     const checkbox = taskElement.querySelector("input[type='checkbox']");
+    const taskList = document.querySelector(".task-list");
+    const textInput = taskElement.querySelector("input[type='text']");
 
-    // Проверяем, был ли клик по чекбоксу
+    // Проверяем, что клик был именно по чекбоксу
     if (event.target === checkbox) {
-        checkbox.checked = !checkbox.checked;  // Меняем состояние чекбокса
-        taskElement.classList.toggle("completed");  // Добавляем/удаляем класс completed
+        taskElement.classList.toggle("completed");
+
+        if (checkbox.checked) {
+            taskList.appendChild(taskElement);
+            textInput.disabled = true;
+        } else {
+            taskList.insertBefore(taskElement, taskList.firstChild);
+            textInput.disabled = false;
+        }
     }
 }
 
