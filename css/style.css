@@ -112,3 +112,12 @@ hr {
 .add-task:hover {
   opacity: 1;
 }
+
+.add-task input[type="text"] {
+  background: transparent;
+  border: none;
+  color: rgb(181, 181, 181);
+  flex-grow: 1;
+  font-size: 16px;
+  outline: none;
+}
