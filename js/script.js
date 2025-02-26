@@ -59,3 +59,10 @@ inputField.addEventListener("blur", function(event) {
         event.target.style.color = "rgba(181, 181, 181, 1)"; // Серый цвет
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const taskList = document.querySelector(".task-list");
+    if (taskList.children.length === 1) {
+        taskList.innerHTML = ""; // Удаляем единственную задачу
+    }
+});
