@@ -293,7 +293,6 @@ hr {
 
 @media (max-width: 1405px) {
   .container {
-    width: min(90%, 800px);
     height: 800px;
     padding: 40px;
     padding-left: 100px;
@@ -307,6 +306,13 @@ hr {
     box-sizing: border-box;
     transition: width 0.3s ease, padding 0.3s ease;
 
+  }
+
+  .main-wrapper {
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
   }
 
   .side-blocks {
